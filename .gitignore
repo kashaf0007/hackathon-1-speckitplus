@@ -1,0 +1,37 @@
+# Gitignore for Docusaurus documentation project
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+
+# Docusaurus
+.docusaurus/
+build/
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+
+# Editor directories and files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Other
+coverage/
+dist/
