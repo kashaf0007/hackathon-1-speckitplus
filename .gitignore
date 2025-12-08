@@ -35,3 +35,11 @@ Thumbs.db
 # Other
 coverage/
 dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+

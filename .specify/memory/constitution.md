@@ -1,46 +1,55 @@
-<!-- Sync Impact Report -->
-<!--
-Version change: 0.0.0 -> 1.0.0
-Modified principles:
-  - Automated Commit & Push (New)
-  - Version Control & Traceability (New)
-  - Security & Authorization (New)
-  - Error Handling & Resilience (New)
-  - Auditability (New)
-Added sections: None
-Removed sections: None
-Templates requiring updates:
-  - .specify/templates/plan-template.md: ⚠ pending
-  - .specify/templates/spec-template.md: ⚠ pending
-  - .specify/templates/tasks-template.md: ⚠ pending
-  - .specify/templates/commands/*.md: ⚠ pending
-Follow-up TODOs: None
--->
-# SpeckitPlus Book Automation Constitution
+# [PROJECT_NAME] Constitution
+<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### I. Automated Commit & Push
-All future SpeckitPlus-generated work MUST be committed and pushed automatically to the designated GitHub repository. This ensures continuous integration and reduces manual overhead.
+### [PRINCIPLE_1_NAME]
+<!-- Example: I. Library-First -->
+[PRINCIPLE_1_DESCRIPTION]
+<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-### II. Version Control & Traceability
-Every change made by the automation MUST be tracked through Git. Each commit MUST include a clear, descriptive message, and all actions MUST be traceable to maintain a comprehensive history of project evolution.
+### [PRINCIPLE_2_NAME]
+<!-- Example: II. CLI Interface -->
+[PRINCIPLE_2_DESCRIPTION]
+<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-### III. Security & Authorization
-The automation process MUST adhere to strict security protocols for GitHub integration. This includes using authorized credentials and ensuring that actions are limited to the scope required for committing and pushing.
+### [PRINCIPLE_3_NAME]
+<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+[PRINCIPLE_3_DESCRIPTION]
+<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### IV. Error Handling & Resilience
-The automation system MUST incorporate robust error handling mechanisms to manage failures during commit and push operations. It SHOULD include retry logic and clear logging for debugging and issue resolution.
+### [PRINCIPLE_4_NAME]
+<!-- Example: IV. Integration Testing -->
+[PRINCIPLE_4_DESCRIPTION]
+<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-### V. Auditability
-All automated actions, particularly commits and pushes, MUST be logged in a way that allows for easy auditing. This includes recording timestamps, specific changes, and the outcome of each operation.
+### [PRINCIPLE_5_NAME]
+<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+[PRINCIPLE_5_DESCRIPTION]
+<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-## Additional Constraints
+### [PRINCIPLE_6_NAME]
 
-All future SpeckitPlus-generated work must be committed & pushed automatically to this GitHub repository: https://github.com/kashaf0007/hackathon-1-speckitplus
+
+[PRINCIPLE__DESCRIPTION]
+
+## [SECTION_2_NAME]
+<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+
+[SECTION_2_CONTENT]
+<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+
+## [SECTION_3_NAME]
+<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+
+[SECTION_3_CONTENT]
+<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
+<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-This Constitution establishes the foundational principles for the SpeckitPlus Book Automation project. It supersedes all other conflicting practices. Amendments require formal documentation, approval by project stakeholders, and a clear migration plan for existing processes. All pull requests and code reviews must verify compliance with these principles.
+[GOVERNANCE_RULES]
+<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->

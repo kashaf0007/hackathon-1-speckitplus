@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot Conversation API
+  version: 1.0.0
+paths:
+  /conversation:
+    get:
+      summary: Retrieve conversation history
+      parameters:
+        - in: query
+          name: conversation_id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of the conversation to retrieve
+      responses:
+        '200':
+          description: Successful retrieval of conversation history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: string
+                    format: uuid
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message_id:
+                          type: string
+                          format: uuid
+                        sender:
+                          type: string
+                          enum: [user, chatbot]
+                        content:
+                          type: string
+                        timestamp:
+                          type: string
+                          format: date-time
+                        is_selected_text_query:
+                          type: boolean
+                        selected_text_context:
+                          type: string
+                          nullable: true
+                        retrieved_chunks_metadata:
+                          type: object
+                          nullable: true
+                required:
+                  - conversation_id
+                  - messages
+        '400':
+          description: Bad request (e.g., missing conversation_id)
+        '403':
+          description: Unauthorized
+        '404':
+          description: Conversation not found
+        '500':
+          description: Internal server error
+  /conversation/start:
+    post:
+      summary: Start a new conversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: Identifier for the user
+              required:
+                - user_id
+      responses:
+        '200':
+          description: New conversation started successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: string
+                    format: uuid
+                required:
+                  - conversation_id
+        '403':
+          description: Unauthorized
+        '500':
+          description: Internal server error

@@ -8,3 +8,43 @@ dependencies = [
     "openai-agents>=0.6.2",
     "python-dotenv>=1.2.1",
 ]
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 120
+select = [
+    "E",  # Error
+    "W",  # Warning
+    "F",  # Pyflakes
+    "I",  # Isort
+    "C",  # Complexity
+    "N",  # Naming
+    "D",  # Docstrings
+    "UP", # Pyupgrade
+    "SIM",# Simplify
+    "B",  # Bugbear
+    "A",  # Builtins
+]
+ignore = [
+    "D100", # Missing docstring in public module
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in __init__
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "docs",
+    "dist",
+    "build",
+    "*.pyi",
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"test_*.py" = ["D"]
+
