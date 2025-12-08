@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Chapter 5: NVIDIA Isaac: AI-Robot Brain
+# Module 3: NVIDIA Isaac: AI-Robot Brain
 
 ## Introduction to NVIDIA Isaac
 
