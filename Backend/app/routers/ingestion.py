@@ -2,7 +2,7 @@ from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.connection import get_db
 from app.db import session as db_session
-from app.ingest import ingest_documents
+from app.services.ingest import ingest_documents
 from app.core.security import get_api_key
 
 router = APIRouter()
