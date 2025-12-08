@@ -1,0 +1,88 @@
+.chatbotButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; /* Example color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.chatbotButton:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+.chatPanel {
+  position: fixed;
+  bottom: 0;
+  right: -350px; /* Hidden by default */
+  width: 330px;
+  height: 100vh; /* Full viewport height */
+  max-height: calc(100vh - 40px); /* Adjust based on button position, if needed */
+  background-color: #f8f9fa; /* Light background */
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  overflow: hidden; /* Ensures content doesn't spill out during slide */
+}
+
+.chatPanelOpen {
+  right: 0; /* Slide in */
+}
+
+.chatPanelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+}
+
+.chatPanelHeader button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.chatPanelBody {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto; /* Enable scrolling for chat content */
+  background-color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatPanel {
+    width: 100vw; /* Full width on smaller screens */
+    right: -100vw;
+    border-radius: 0;
+  }
+  .chatPanelOpen {
+    right: 0;
+  }
+  .chatbotButton {
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}
