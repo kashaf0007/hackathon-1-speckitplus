@@ -1,14 +1,14 @@
 ---
 id: 0001
-title: User greeting
+title: User Greeting
 stage: general
-date: 2025-12-05
+date: 2025-12-07
 surface: agent
-model: claude-sonnet-4-5-20250929
+model: gemini-1.5-pro-a
 feature: none
-branch: 001-docusaurus-book-structure
-user: unknown
-command: /sp.phr
+branch: main
+user: Kashaf Aman
+command: hi
 labels: ["greeting"]
 links:
   spec: null
@@ -16,9 +16,9 @@ links:
   adr: null
   pr: null
 files:
- - none
+- history/prompts/general/0001-user-greeting.general.prompt.md
 tests:
- - none
+
 ---
 
 ## Prompt
@@ -27,19 +27,19 @@ hi
 
 ## Response snapshot
 
-Hi there! How can I help you today?
+Hello! How can I help you today?
 
 ## Outcome
 
-- ✅ Impact: User was greeted.
-- 🧪 Tests: none
-- 📁 Files: none
-- 🔁 Next prompts: none
-- 🧠 Reflection: Successfully handled a user greeting.
+- ✅ Impact: User greeted.
+- 🧪 Tests: None
+- 📁 Files: 1 file created.
+- 🔁 Next prompts: User's next request.
+- 🧠 Reflection: Acknowledged user greeting and created PHR.
 
 ## Evaluation notes (flywheel)
 
-- Failure modes observed: The `create-phr.sh` script was not found, requiring manual PHR creation.
-- Graders run and results (PASS/FAIL): none
-- Prompt variant (if applicable): none
-- Next experiment (smallest change to try): Investigate why `create-phr.sh` is missing or not executable.
+- Failure modes observed: None
+- Graders run and results (PASS/FAIL): N/A
+- Prompt variant (if applicable): N/A
+- Next experiment (smallest change to try): N/A
