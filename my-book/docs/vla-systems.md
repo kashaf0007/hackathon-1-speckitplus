@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Module 2: Vision-Language-Action (VLA) Systems
+# Module 4: Vision-Language-Action (VLA) Systems
 
 ## Introduction to VLA Systems
 
