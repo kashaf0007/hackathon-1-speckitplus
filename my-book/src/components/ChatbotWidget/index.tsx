@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { queryChatbot, querySelectedTextChatbot } from '../../services/chatbot';
+import styles from './ChatbotWidget.module.css';
 
 const ChatbotWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,7 @@ const ChatbotWidget: React.FC = () => {
   const handleSelectedTextQuery = async () => {
     const selectedText = "The quick brown fox jumps over the lazy dog."; // Placeholder for selected text
     const query = "What is the meaning of this text?"; // Placeholder query for selected text
-    
+
     if (!selectedText.trim()) return;
 
     const userMessage = { role: 'user', content: `Query about selected text: "${selectedText}" - ${query}` };
@@ -68,9 +69,7 @@ const ChatbotWidget: React.FC = () => {
     <>
       {/* Chat Panel */}
       <div
-        className={`fixed top-0 right-0 h-full bg-white shadow-lg transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } w-full max-w-md flex flex-col`}
+        className={`${styles.chatPanel} ${isOpen ? styles.chatPanelOpen : ''}`}
         style={{ zIndex: 1000 }}
       >
         {/* Header */}
@@ -123,7 +122,7 @@ const ChatbotWidget: React.FC = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-10 right-10 bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        className={styles.chatbotButton}
         style={{ zIndex: 1001 }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
