@@ -1,55 +1,37 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# SpeckitPlus Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean and Maintainable Code
+All code must be written in a clean, simple, and maintainable way. Follow SOLID principles and language-specific best practices.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Test-Driven Development (TDD)
+TDD is mandatory for all new features. Tests must be written before the implementation, they must fail before the implementation, and they must pass after the implementation. Use `pytest` for backend testing and a suitable framework (like Jest or Vitest) for frontend testing.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. API First and Documented
+APIs are first-class citizens. All endpoints must be documented using the OpenAPI standard. FastAPI's automatic documentation generation should be leveraged.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Consistent Code Style
+All Python code must be formatted with `black` and linted with `ruff`. All frontend code should follow standard Prettier and ESLint configurations.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Semantic Versioning
+The project follows semantic versioning (MAJOR.MINOR.PATCH). All breaking changes must be introduced in a new MAJOR version.
 
-### [PRINCIPLE_6_NAME]
+### VI. Git Workflow
+All work must be done on feature branches. Feature branches should be named like `[feature-number]-[short-description]` (e.g., `002-rag-chatbot`). All changes must be submitted as Pull Requests (PRs) and reviewed by at least one other team member.
 
+## Development Workflow
 
-[PRINCIPLE__DESCRIPTION]
+### Spec-Driven Development
+All features must start with a specification (`spec.md`), a plan (`plan.md`), and tasks (`tasks.md`) before implementation begins. The `/sp.analyze` command should be run to ensure consistency.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Quality Gates
+- All tests must pass.
+- Linting and formatting checks must pass.
+- All conversations in a PR must be resolved.
+- The PR must be approved by at least one reviewer.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution is the source of truth for all development practices. Any changes to this constitution must be proposed as a PR and approved by the project owner.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-10 | **Last Amended**: 2025-12-10

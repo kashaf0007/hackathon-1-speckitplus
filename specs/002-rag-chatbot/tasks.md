@@ -54,7 +54,8 @@
 - [X] T013 [P] [US1] Implement top-k semantic search in `backend/app/rag/retrieval.py`
 - [X] T014 [US1] Build grounding safety mechanism (reject ungrounded answers) in `backend/app/rag/agent.py`
 - [X] T015 [US1] Integrate OpenAI Agents/ChatKit for generation with system instruction ("answer ONLY from retrieved chunks") in `backend/app/rag/agent.py`
-- [X] T016 [P] [US1] Add citation formatting with chunk IDs in `backend/app/rag/agent.py`
+- [X] T016 [P] [US1] Add citation formatting with chunk IDs in `
+backend/app/rag/agent.py`
 - [X] T017 [US1] Create `/query` API endpoint in `backend/app/routers/rag.py` that utilizes retrieval and LLM agent.
 - [X] T018 [US1] Implement basic JS fetch wrapper for `/query` in `my-book/src/services/chatbot.js`
 - [ ] T019 [US1] Generate a popup chat widget for my RAG chatbot. Create a floating circular chat button fixed at the bottom-right of the page. When the button is clicked, open a sliding chat panel from the right side of the screen. The panel should have a header, message area, and input box. Use HTML + Typescript + custom CSS. Add smooth slide-in/out animation and responsive design. Keep the code minimal, clean, and production-ready. The widget must not affect the rest of the UI on the homepage.
@@ -110,6 +111,17 @@
 - [X] T034 [P] Implement `/conversation` API endpoint (log + fetch chat history) in `backend/app/routers/rag.py`
 - [X] T035 Run `quickstart.md` validation, ensuring all steps are accurate and functional.
 - [X] T036 Code cleanup and refactoring across the backend and frontend.
+
+---
+
+## Phase 7: Non-Functional Testing
+
+**Purpose**: To verify that the system meets the non-functional requirements defined in the specification.
+
+- [ ] T037 [NFR] [US1] Create a performance test suite to measure query response time under load.
+- [ ] T038 [NFR] [US1] Create a test suite with a curated list of out-of-scope questions to validate refusal accuracy.
+- [ ] T039 [NFR] [US3] Create an automated test to measure content ingestion and indexing speed.
+- [ ] T040 [NFR] [US1] Create a test suite with questions designed to provoke hallucinations and validate the grounding mechanism.
 
 ---
 
