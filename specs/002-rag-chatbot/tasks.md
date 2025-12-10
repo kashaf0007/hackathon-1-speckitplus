@@ -57,7 +57,7 @@
 - [X] T016 [P] [US1] Add citation formatting with chunk IDs in `backend/app/rag/agent.py`
 - [X] T017 [US1] Create `/query` API endpoint in `backend/app/routers/rag.py` that utilizes retrieval and LLM agent.
 - [X] T018 [US1] Implement basic JS fetch wrapper for `/query` in `my-book/src/services/chatbot.js`
-- [X] T019 [US1] Create basic UI component placeholder for chatbot widget in `my-book/src/components/ChatbotWidget/index.js`
+- [X] T019 [US1] Create basic UI component placeholder for chatbot popup widget in `my-book/src/components/ChatbotWidget/index.js`
 - [X] T020 [US1] Embed chatbot widget into Docusaurus book (e.g., a common layout or sidebar)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
