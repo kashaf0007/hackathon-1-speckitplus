@@ -1,11 +1,15 @@
+from ast import Import
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
+from Backend import app
 from app.db.connection import get_db
 from app.db import session as db_session
 from app.services.ingest import ingest_documents
 from app.core.security import get_api_key
 
-router = APIRouter()
+
+
+router = APIRouter() 
 
 @router.post("/ingest", status_code=202, dependencies=[Depends(get_api_key)])
 async def trigger_ingestion(background_tasks: BackgroundTasks, db: AsyncSession = Depends(get_db)):
