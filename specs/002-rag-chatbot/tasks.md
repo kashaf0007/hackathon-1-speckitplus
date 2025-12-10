@@ -57,7 +57,7 @@
 - [X] T016 [P] [US1] Add citation formatting with chunk IDs in `backend/app/rag/agent.py`
 - [X] T017 [US1] Create `/query` API endpoint in `backend/app/routers/rag.py` that utilizes retrieval and LLM agent.
 - [X] T018 [US1] Implement basic JS fetch wrapper for `/query` in `my-book/src/services/chatbot.js`
-- [X] T019 [US1] Create a simple popup chat widget for a RAG chatbot in `my-book/src/components/ChatbotWidget/index.tsx`
+- [ ] T019 [US1] Generate a popup chat widget for my RAG chatbot. Create a floating circular chat button fixed at the bottom-right of the page. When the button is clicked, open a sliding chat panel from the right side of the screen. The panel should have a header, message area, and input box. Use HTML + Typescript + custom CSS. Add smooth slide-in/out animation and responsive design. Keep the code minimal, clean, and production-ready. The widget must not affect the rest of the UI on the homepage.
 - [X] T020 [US1] Embed chatbot widget into Docusaurus book (e.g., a common layout or sidebar)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
