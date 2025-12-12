@@ -1,6 +1,6 @@
 # SpecKitPlus Book
 
-This repository contains the source code for the SpecKitPlus Book, a documentation website built with Docusaurus, and a RAG (Retrieval-Augmented Generation) chatbot backend built with FastAPI.
+This repository contains the source code for the SpecKitPlus Book, a documentation website built with Docusaurus, and a RAG (Retrieval-Augmented Generation) chatbot backend built with FastAPI and Authentication with Better-auth .
 
 ## Project Structure
 
