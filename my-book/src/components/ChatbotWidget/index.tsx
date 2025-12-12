@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { queryChatbot, querySelectedTextChatbot } from '../../services/chatbot';
 import styles from './ChatbotWidget.module.css';
 
@@ -9,6 +10,9 @@ const ChatbotWidget: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const { siteConfig } = useDocusaurusContext();
+  const { apiBaseUrl, apiKey } = siteConfig.customFields as { apiBaseUrl: string; apiKey: string; };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -28,7 +32,7 @@ const ChatbotWidget: React.FC = () => {
     setInput('');
 
     try {
-      const response = await queryChatbot(input, conversationId);
+      const response = await queryChatbot(input, conversationId, apiBaseUrl, apiKey);
       const botMessage = { role: 'assistant', content: response.answer, sources: response.sources };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
       setConversationId(response.conversation_id);
@@ -53,7 +57,7 @@ const ChatbotWidget: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await querySelectedTextChatbot(query, selectedText, conversationId);
+      const response = await querySelectedTextChatbot(query, selectedText, conversationId, apiBaseUrl, apiKey);
       const botMessage = { role: 'assistant', content: response.answer, sources: response.sources };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
       setConversationId(response.conversation_id);

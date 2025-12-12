@@ -1,11 +1,9 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000'; // Replace with Docusaurus env var
-
-export async function queryChatbot(query, conversationId = null) {
-  const response = await fetch(`${API_BASE_URL}/query`, {
+export async function queryChatbot(query: string, conversationId: string | null, apiBaseUrl: string, apiKey: string) {
+  const response = await fetch(`${apiBaseUrl}/query`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-API-Key': process.env.REACT_APP_API_KEY, // Replace with Docusaurus env var
+      'X-API-Key': apiKey,
     },
     body: JSON.stringify({ query, conversation_id: conversationId }),
   });
@@ -18,12 +16,12 @@ export async function queryChatbot(query, conversationId = null) {
   return response.json();
 }
 
-export async function querySelectedTextChatbot(query, text, conversationId = null) {
-  const response = await fetch(`${API_BASE_URL}/selected-text`, {
+export async function querySelectedTextChatbot(query: string, text: string, conversationId: string | null, apiBaseUrl: string, apiKey: string) {
+  const response = await fetch(`${apiBaseUrl}/selected-text`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'X-API-Key': process.env.REACT_APP_API_KEY, // Replace with Docusaurus env var
+      'X-API-Key': apiKey,
     },
     body: JSON.stringify({ query, text, conversation_id: conversationId }),
   });
