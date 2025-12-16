@@ -3,7 +3,7 @@ import { queryChatbot, querySelectedTextChatbot } from '../../services/chatbot';
 import styles from './ChatbotWidget.module.css';
 
 const ChatbotWidget: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ role: string; content: string; sources?: string[] }[]>([]);
   const [loading, setLoading] = useState(false);
