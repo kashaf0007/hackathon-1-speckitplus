@@ -1,0 +1,3 @@
+The following changes were made to resolve the 'Uncaught ReferenceError: process is not defined' error:
+- The 'API_BASE_URL' was hardcoded to 'http://localhost:8000' to remove the dependency on 'process.env'.
+- The 'X-API-Key' header was removed from the API calls as it also relied on 'process.env'.
